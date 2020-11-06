@@ -1,0 +1,25 @@
+div [smv-type="widgetpage"],
+div[smv-widget="memberfees"] {
+  body {
+    color: $black-01;
+    // font: normal 125% / 1.4 $text-font-stack;
+  }
+
+  h1 {
+    @include font(2.2rem, 700, 1.2em);
+    color: $primary-01;
+    text-align: left;
+  }
+
+  h2 {
+    @include font(2rem, 700, 1.4em);
+    color: $primary-01;
+    text-align: center;
+  }
+
+  h3 {
+    @include font(1.2rem, 700, 1.4em);
+    color: $gray-02;
+    text-align: center;
+  }
+}

@@ -1,0 +1,153 @@
+.load-screen {
+  width: 100%;
+  height: 100%;
+  background: url(../images/loading.gif) no-repeat center center $black-01;
+  background-size: 100px auto;
+  position: fixed;
+  opacity: 0.8;
+  z-index: 2000;
+  text-align: center;
+}
+
+.section-login {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 3rem 0;
+
+  .container-login {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-tabs {
+    width: 100%;
+    border: none;
+    @include flex(row, center, center, center);
+    @include font(1.4rem, 900, 1.4em);
+    text-transform: uppercase;
+
+    .nav-link {
+      color: $gray-02;
+      border-radius: .25rem;
+
+      &:hover {
+        color: $primary-01;
+        border-color: #eceeef;
+        transition: all .2s linear;
+      }
+    }
+
+    .nav-link.active {
+      background: $secondary-01;
+      color: $primary-02;
+      border: none;
+    }
+  }
+
+  .tab-content {
+    width: 100%;
+    position: relative;
+
+    .active {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+    }
+
+    .tab-pane-registo {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      padding-top: 3rem;
+    }
+  }
+
+  .registo-member,
+  .registo-noMember {
+    form {
+      margin: 1.5rem auto;
+    }
+
+    p {
+      width: 100%;
+      @include font(1.4rem, 300, 1.4em);
+      text-align: center;
+    }
+  }
+
+  .registo-member {
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: 80%;
+      background-color: $gray-01;
+      opacity: .8;
+      @include absolute(0, 0, auto, auto);
+    }
+
+    @include sm {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  form {
+    .container-input {
+      justify-content: space-between;
+    }
+
+    .show-password {
+      display: inline-block;
+      @include absolute (50%, 1rem, auto, auto);
+      transform: translateY(-30%);
+    }
+  }
+
+  .aviso-noMember {
+    @include font(1.4rem, 300, 1.4em);
+    margin-bottom: 1.4rem;
+
+    .link-registo {
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .container-sucesso {
+    @include flex(column, center, center, center);
+    margin: 1.5rem 0;
+
+    i {
+      margin-bottom: 1.5rem;
+    }
+
+    img {
+      width: 5rem;
+    }
+
+    h1 {
+      border: none;
+      text-align: center;
+    }
+
+    .container-btn {
+      margin-top: 1.5rem;
+      @include flex(row, center, flex-end, flex-end);
+
+      a {
+        margin: 0 1rem;
+      }
+    }
+  }
+}

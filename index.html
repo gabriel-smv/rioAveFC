@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rio Ave FC - Área de Sócio</title>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="section-login" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <!-- LOGIN / REGISTO -->
+        <div class="container-login col-lg-12">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login"
+                aria-selected="true">Login</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="registo-tab" data-toggle="tab" href="#registo" role="tab" aria-controls="registo"
+                aria-selected="false">Registo</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="myTabContent">
+            <!-- login -->
+            <div class="tab-pane show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+              <form name="smv_fUserLogin" id="smv_fUserLogin" class="col-lg-4 col-md-6">
+                <div class="container-input">
+                  <label for="smv_ulogin_Email" class="form-label">E-mail</label>
+                  <input name="smv_ulogin_Email" id="smv_ulogin_Email">
+                </div>
+
+                <div class="container-input">
+                  <label for="smv_ulogin_Pwd" class="form-label" smv-langtext="lblpassword">Password</label>
+                  <input name="smv_ulogin_Pwd" id="smv_ulogin_Pwd" type="password" maxlength="30">
+                  <a href="#" class="show-password"><img src="images/svg/eye.svg" alt=""></a>
+                  <a href="#" class="show-password" style="display: none;"><img src="images/svg/eye-off.svg" alt=""></a>
+                </div>
+
+                <a href="javascript:smv_showPwdRequest()" class="esqueci-senha" smv-langtext="linkforgotpwd">Recuperar a
+                  password</a>
+
+                <a href="javascript:smv_UserLogin()" class="btn btn-secondary">
+                  <span smv-langtext="btlogin">entrar</span>
+                </a>
+
+                <a href="javascript:smv_uaccess_goUFM()" class="esqueci-senha link-registo"
+                  smv-langtext="linkgotonewuser">Ainda não tem uma conta? Registe-se aqui.</a>
+              </form>
+
+              <!-- pwd request -->
+              <section class="recuperar-senha" style="display:none;">
+                <form>
+                  <h2 smv-langtext="userpwdreqfrase ">Digite seu e-mail para recuperar a senha</h2>
+
+                  <div class="container-input col-lg-8 col-md-12">
+                    <label for="smv_upwdreq_Email" class="form-label">E-mail</label>
+                    <input name="smv_upwdreq_Email" id="smv_upwdreq_Email">
+                  </div>
+
+                  <button type="button " class="btn btn-primary">
+                    <span>Recuperar password</span>
+                  </button>
+
+                  <a href="#" class="esqueci-senha">Voltar ao Login</a>
+                </form>
+              </section>
+            </div>
+
+            <!-- registo -->
+            <div class="tab-pane tab-pane-registo fade" id="registo" role="tabpanel" aria-labelledby="registo-tab">
+              <!-- members -->
+              <div class="registo-member col-lg-6 col-md-6">
+                <h2>Registo para sócios</h2>
+                <p>
+                  Se já é sócio do Vitória SC, valide a sua conta preenchendo os seus dados.
+                </p>
+
+                <form class="col-lg-8">
+                  <div class="container-input">
+                    <label for="smv_ufm_SocNum" class="form-label" smv-langtext="lblsocnum">Número de sócio</label>
+                    <input type="text" name="smv_ufm_SocNum" id="smv_ufm_SocNum" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="smv_ufm_CardDigits" class="form-label" smv-langtext="lbladdsoccodbarras">Últimos 5
+                      dígitos do código de barras</label>
+                    <input type="text" class="input-single">
+                    <input type="text" class="input-single">
+                    <input type="text" class="input-single">
+                    <input type="text" class="input-single">
+                    <input type="text" class="input-single">
+
+                    <i class="info-cartao ">
+                      <img src="images/svg/information.svg" alt="Informação sobre o cartão de sócio ">
+                      <div class="member-card">
+                        <img src="images/memberCard.png" alt="">
+                      </div>
+                    </i>
+                  </div>
+
+                  <div class="registo_captcha" style="display: none;">
+                    <div align="center" class="g-recaptcha" id="smv_ufm_gre">
+                      <div style="width: 304px; height: 78px;">
+                        <div><iframe
+                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld-8QcTAAAAAL0ECiIL_q3pdF_gwfTzwZnRA962&amp;co=aHR0cHM6Ly9kZXYuc21hcnRmYW4udGlja2V0czo0NDM.&amp;hl=pt-PT&amp;v=wk6lx42JIeYmEAQSHndnyT8Q&amp;size=normal&amp;cb=8s5mulbufbr5"
+                            width="304" height="78" role="presentation" name="a-o382qx1ceiqs" frameborder="0"
+                            scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                        </div>
+                        <textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response"
+                          style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                      </div>
+                    </div>
+                    <input type="hidden" name="smv_ufm_valBLAH" id="smv_ufm_valBLAH" value="" smv-captchaon="1"
+                      smv-rcwidgetid="1">
+                  </div>
+
+                  <a href="javascript:smv_UserFromMemberValidate()" class="btn btn-secondary">
+                    <span smv-langtext="btvalidate">Validar</span>
+                  </a>
+                </form>
+              </div>
+
+              <!-- no members -->
+              <div class="registo-noMember col-lg-6 col-md-6">
+                <h2>Registo para não sócios</h2>
+                <p>
+                  Se não é sócio do Vitória SC, preencha os seus dados para ter uma conta.
+                </p>
+
+                <form class="col-lg-8">
+                  <div class="container-input">
+                    <label for="member-name" class="form-label">Nome</label>
+                    <input type="text" name="member-name" id="member-name" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="member-e-mail" class="form-label">E-mail</label>
+                    <input type="email" name="member-e-mail" id="member-e-mail" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="member-password" class="form-label">Password</label>
+                    <input type="password" name="member-password" id="member-password" maxlength="10">
+                    <a href="#" class="show-password"><img src="images/svg/eye.svg" alt=""></a>
+                    <a href="#" class="show-password" style="display: none;"><img src="images/svg/eye-off.svg"
+                        alt=""></a>
+                  </div>
+
+                  <div class="registo_captcha" style="display: none;">
+                    <div align="center" class="g-recaptcha" id="smv_ufm_gre">
+                      <div style="width: 304px; height: 78px;">
+                        <div><iframe
+                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld-8QcTAAAAAL0ECiIL_q3pdF_gwfTzwZnRA962&amp;co=aHR0cHM6Ly9kZXYuc21hcnRmYW4udGlja2V0czo0NDM.&amp;hl=pt-PT&amp;v=wk6lx42JIeYmEAQSHndnyT8Q&amp;size=normal&amp;cb=8s5mulbufbr5"
+                            width="304" height="78" role="presentation" name="a-o382qx1ceiqs" frameborder="0"
+                            scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                        </div>
+                        <textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response"
+                          style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                      </div>
+                    </div>
+                    <input type="hidden" name="smv_ufm_valBLAH" id="smv_ufm_valBLAH" value="" smv-captchaon="1"
+                      smv-rcwidgetid="1">
+                  </div>
+
+                  <a href="javascript:smv_UserFromMemberValidate()" class="btn btn-secondary">
+                    <span smv-langtext="btvalidate">Registar</span>
+                  </a>
+                </form>
+              </div>
+
+              <a href="javascript:smv_uaccess_goUAccess()" class="esqueci-senha link-registo"
+                smv-langtext="linkgotologin">Já tem conta? Faça o seu login aqui.</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- VALIDAÇÃO SÓCIO -->
+        <div class="container-registo-socio col-lg-12" style="display:none;">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="registo-socio-tab" data-toggle="tab" href="#registo-socio" role="tab"
+                aria-controls="registo-socio" aria-selected="false">Registo para sócio</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="myTabContent">
+            <!-- registo members -->
+            <div class="tab-pane tab-pane-registo show active" id="registo-socio" role="tabpanel"
+              aria-labelledby="registo-socio-tab">
+              <div class="registo-noMember col-lg-12">
+                <p>
+                  Se não é sócio do Vitória SC, preencha os seus dados para ter uma conta.
+                </p>
+
+                <form class="col-lg-4 col-md-6">
+                  <div class="container-input">
+                    <label for="member-name" class="form-label">Nome</label>
+                    <input type="text" name="member-name" id="member-name" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="member-lastname" class="form-label">Sobrenome</label>
+                    <input type="text" name="member-lastname" id="member-lastname" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="member-email" class="form-label">E-mail</label>
+                    <input type="text" name="member-email" id="member-email" maxlength="10">
+                  </div>
+
+                  <div class="container-input">
+                    <label for="member-password" class="form-label">Password</label>
+                    <input type="password" name="member-password" id="member-password" maxlength="10">
+                    <a href="#" class="show-password"><img src="images/svg/eye.svg" alt=""></a>
+                    <a href="#" class="show-password" style="display: none;"><img src="images/svg/eye-off.svg"
+                        alt=""></a>
+                  </div>
+
+                  <div class="registo_captcha" style="display: none;">
+                    <div align="center" class="g-recaptcha" id="smv_ufm_gre">
+                      <div style="width: 304px; height: 78px;">
+                        <div><iframe
+                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld-8QcTAAAAAL0ECiIL_q3pdF_gwfTzwZnRA962&amp;co=aHR0cHM6Ly9kZXYuc21hcnRmYW4udGlja2V0czo0NDM.&amp;hl=pt-PT&amp;v=wk6lx42JIeYmEAQSHndnyT8Q&amp;size=normal&amp;cb=8s5mulbufbr5"
+                            width="304" height="78" role="presentation" name="a-o382qx1ceiqs" frameborder="0"
+                            scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                        </div>
+                        <textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response"
+                          style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                      </div>
+                    </div>
+                    <input type="hidden" name="smv_ufm_valBLAH" id="smv_ufm_valBLAH" value="" smv-captchaon="1"
+                      smv-rcwidgetid="1">
+                  </div>
+
+                  <a href="javascript:smv_UserFromMemberValidate()" class="btn btn-secondary">
+                    <span smv-langtext="btvalidate">Registar</span>
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUCESSO -->
+        <div class="container-sucesso col-lg-12" style="display:none;">
+          <i><img src="images/svg/check-icon.svg" alt="Ícone de confirmação"></i>
+
+          <h1>Seu registo foi realizado com sucesso!</h1>
+
+          <div class="container-btn">
+            <a href="index.html" class="btn btn-primary">botão</a>
+            <a class="btn btn-secondary" data-toggle="collapse" href="index">botão</a>
+          </div>
+        </div>
+
+        <!-- ERRO -->
+        <div class="container-sucesso col-lg-12" style="display:none;">
+          <i><img src="images/svg/error-icon.svg" alt=""></i>
+
+          <h1>Não foi possível realizar o seu registo.</h1>
+          <h2>Por favor, tente mais tarde.</h2>
+
+          <div class="container-btn">
+            <a href="index.html" class="btn-link">Cancelar</a>
+            <a href="index" class="btn btn-secondary">Atualizar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div smv-type="widgetcontainer" smv-widget="userfrommember">
+    <div smv-type="widgetpage" id="smv_wp_userfrommember">
+      <div class="load-screen" smv-type="loader" smv-widget="userfrommember" style="display:none"></div>
+
+      <div class="tab-content col-lg-6 col-md-10 col-sm-12" id="smv_ufmvalidation">
+        <div smv-type="wufmbrarea" id="smv_ufmsociodata" class="userfrommember">
+          <h2 smv-langtext="fraseuserfrommbr">Insere os teus dados de sócio e regista-te!</h2>
+
+          <form name="smv_fUFMbrVal" id="smv_fUFMbrVal" novalidate="novalidate">
+            <div class="container-input col-lg-8" style="display: none;">
+              <input type="checkbox" id="select-club" style="display: none;">
+              <label for="select-club" class="select-club">
+                <img src="https://lisboa.smartmove.pt:8083/RAFC/ResourcesWebStoreV2/images/logo-1rioavefc.png" alt="">
+                <p>Rio Ave Futebol Clube</p>
+              </label>
+            </div>
+
+            <!--<p class="team-select-name" id="smv_ufm_selTeamName"></p>-->
+            <input type="hidden" name="smv_ufm_selTeamREF" id="smv_ufm_selTeamREF" value="">
+            <input type="hidden" name="smv_ufm_selTeamCtrlDigit" id="smv_ufm_selTeamCtrlDigit" value="0">
+
+            <div id="smv_ufm_dataform" smv-type="wufmteam">
+              <div class="container-input">
+                <label for="smv_ufm_SocNum" class="form-label" smv-langtext="lblsocnum">Número de sócio</label>
+                <input type="text" name="smv_ufm_SocNum" id="smv_ufm_SocNum" maxlength="10">
+                <input type="text" name="smv_ufm_SocCtrl" id="smv_ufm_SocCtrl" maxlength="2" class="input-single"
+                  style="display:none">
+              </div>
+
+              <div class="container-input">
+                <label for="smv_ufm_CDigit1" class="form-label" smv-langtext="lbladdsoccodbarras">Últimos 5 dígitos do
+                  código de barras</label>
+                <input name="smv_ufm_CDigit1" id="smv_ufm_CDigit1" maxlength="1" type="text" class="input-single"
+                  smv-type="carddigit">
+                <input name="smv_ufm_CDigit2" id="smv_ufm_CDigit2" maxlength="1" type="text" class="input-single"
+                  smv-type="carddigit">
+                <input name="smv_ufm_CDigit3" id="smv_ufm_CDigit3" maxlength="1" type="text" class="input-single"
+                  smv-type="carddigit">
+                <input name="smv_ufm_CDigit4" id="smv_ufm_CDigit4" maxlength="1" type="text" class="input-single"
+                  smv-type="carddigit">
+                <input name="smv_ufm_CDigit5" id="smv_ufm_CDigit5" maxlength="1" type="text" class="input-single"
+                  smv-type="carddigit">
+
+                <i class="info-cartao" id="smv_ufminfocard">
+                  <img src="images/svg/information.svg" smv-langtitle="membercardinfotext"
+                    alt="Informação sobre o cartão de sócio" title="Informação sobre o cartão de sócio">
+                  <div class="member-card">
+                    <img src="https://lisboa.smartmove.pt:8083/RAFC/ResourcesWebStoreV2/images/memberCard.png" alt="">
+                  </div>
+                </i>
+
+                <i class="info-cartao" id="smv_ufminfocarddigit" style="display:none">
+                  <img src="https://lisboa.smartmove.pt:8083/RAFC/ResourcesWebStoreV2/images/svg/information.svg"
+                    smv-langtitle="membercardinfotext" alt="Informação sobre o cartão de sócio"
+                    title="Informação sobre o cartão de sócio">
+                  <div class="member-card">
+                    <img src="https://lisboa.smartmove.pt:8083/RAFC/ResourcesWebStoreV2/images/memberCard2.png" alt="">
+                  </div>
+                </i>
+              </div>
+
+              <div class="registo_captcha">
+                <div align="center" class="g-recaptcha" id="smv_ufm_gre"></div>
+                <input type="hidden" name="smv_ufm_valBLAH" id="smv_ufm_valBLAH" value="">
+              </div>
+
+              <a href="javascript:smv_UserFromMemberValidate()" class="btn btn-primary">
+                <span smv-langtext="btvalidate">Validar</span>
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div smv-type="wufmbrarea" id="smv_ufmaccountdata" style="display:none">
+          <h2 smv-langtext="frase2userfrommbr">Insere o teu e-mail e password</h2>
+
+          <ul class="infos-socio">
+            <li><img src="" alt="" id="smv_ufm_TemLogo"></li>
+
+            <li>
+              <!-- <span id="smv_ufm_MemberName"></span>-->
+              <span><span smv-langtext="lblsocnumber">Sócio Nº</span> <span id="smv_ufm_MemberNum"></span></span>
+            </li>
+          </ul>
+
+          <form name="smv_fUFMbrAccD" id="smv_fUFMbrAccD" novalidate="novalidate">
+            <input id="smv_ufm_regtype" name="smv_ufm_regtype" type="hidden" value="normal">
+
+            <div class="container-input">
+              <label for="smv_ufm_AccName" smv-langtext="lblname">Nome</label>
+              <input name="smv_ufm_AccName" id="smv_ufm_AccName" type="text" maxlength="20" value=""
+                smv-filterchars="name">
+            </div>
+
+            <div class="container-input">
+              <label for="smv_ufm_AccSurname" smv-langtext="lblsurname">Sobrenome</label>
+              <input name="smv_ufm_AccSurname" id="smv_ufm_AccSurname" type="text" maxlength="40" value=""
+                smv-filterchars="name">
+            </div>
+
+            <div class="container-input">
+              <label for="smv_ufm_AccBDate" smv-langtext="lblbdate">Data de Nascimento</label>
+              <input name="smv_ufm_AccBDate" id="smv_ufm_AccBDate" type="tel"
+                smv-langplaceholder="plholderdateformatDMY" placeholder="DD-MM-AAAA">
+            </div>
+
+            <div class="container-input">
+              <label for="smv_ufm_AccEmail" smv-langtext="lblemail">E-mail</label>
+              <input name="smv_ufm_AccEmail" id="smv_ufm_AccEmail" onblur="javascript:smv_fieldTrim('smv_ufm_AccEmail')"
+                type="email" maxlength="75" autocapitalize="none" autocorrect="off">
+            </div>
+
+            <div class="container-input">
+              <label for="smv_ufm_AccPwd" smv-langtext="lblpassword">Password</label>
+              <input name="smv_ufm_AccPwd" id="smv_ufm_AccPwd" type="password" maxlength="30">
+            </div>
+
+            <div class="container-input">
+              <label for="smv_ufm_AccPwd2" smv-langtext="lblpassword2">Confirma a password</label>
+              <input name="smv_ufm_AccPwd2" id="smv_ufm_AccPwd2" type="password" maxlength="30">
+            </div>
+
+            <div class="termos-condicoes">
+              <ul class="checkbox-periodo">
+                <li class="checkbox-periodo__item">
+                  <input type="checkbox" id="smv_ufm_tos" name="smv_ufm_tos" value="1" class="inp-cbx"
+                    style="display: none;">
+                  <label class="cbx" for="smv_ufm_tos">
+                    <span>
+                      <svg width="12px" height="10px" viewBox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                    </span>
+                    <!-- smv-langrepltext-widgetname="userfrommember" -->
+                    <p smv-langtext="pisco_allterms" smv-langrepltext-widgetname="userfrommember">Concordo com os <a
+                        href="javascript:smv_piscoEXIT_ToS('userfrommember')">Termos e Condições</a>, <a
+                        href="javascript:smv_piscoEXIT_Privacy('userfrommember')">Política de Privacidade</a> e <a
+                        href="javascript:smv_piscoEXIT_ToSale('userfrommember')">Condições de Utilização de
+                        Serviços</a>.</p>
+                  </label>
+                </li>
+
+                <li class="checkbox-periodo__item">
+                  <input type="checkbox" id="smv_ufm_pubsend" name="smv_ufm_pubsend" value="1" class="inp-cbx"
+                    style="display: none;">
+                  <label class="cbx" for="smv_ufm_pubsend">
+                    <span>
+                      <svg width="12px" height="10px" viewBox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                    </span>
+                    <p smv-langtext="pisco_allowcontact">Aceito receber comunicações personalizadas com informações
+                      sobre serviços e produtos disponibilizados por SMARTFAN.TICKETS e seus Parceiros.</p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <a href="javascript:smv_UserFromMemberRequest()" class="btn btn-primary">
+              <span smv-langtext="btregister">Registar</span>
+            </a>
+          </form>
+        </div>
+
+        <div smv-type="wufmbrarea" id="smv_ufmaccountemailsent" style="display:none">
+          <div smv-langtext="ufm_confirmemaillink">
+            Foi enviado um e-mail para concluir o processo. 
+            <div class="txt_small">Se não receberes o e-mail dentro de alguns minutos, verifica a tua caixa de spam/lixo electrónico da conta de e-mail indicada.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery, Bootstrap JS -->
+  <script src="includes/jquery.min.js"></script>
+  <script src="includes/bootstrap.min.js"></script>
+
+  <script src="js/menu.js "></script>
+</body>
+
+</html>

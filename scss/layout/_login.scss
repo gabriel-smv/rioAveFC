@@ -1,0 +1,452 @@
+div[smv-widget="userfrommember"] {
+  padding: 3rem 0;
+
+  div[smv-type="widgetpage"] {
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    width: 50%
+  }
+}
+
+div [smv-type="widgetpage"] {
+  .modal-login-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding-top: 7rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 999;
+    position: fixed;
+    overflow-y: auto;
+    text-align: center;
+  }
+
+  .modal-content {
+    width: 45%;
+    background-color: #FFFFFF;
+    position: relative;
+
+    @include md {
+      width: 70%;
+    }
+
+    @include sm {
+      width: 95%;
+    }
+  }
+
+  .modal-login-container.mostrar {
+    @include flex(column, flex-start, center, center);
+  }
+
+  .mostrar {
+    .modal-content {
+      animation: modal .6s;
+    }
+  }
+
+  .closeModal {
+    width: 3rem;
+    height: auto;
+    display: inline-block;
+    @include absolute(-4rem, 0, auto, auto);
+    padding: .6rem;
+    background-color: #FFFFFF;
+    border: 1px solid $secondary-01;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      opacity: .8;
+      transform: scale(.9);
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  .nav_tabs {
+    width: 100%;
+    height: auto;
+    background: $white-01;
+    position: relative;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+
+    ul {
+      @include flex(row, center, center, center);
+      border-bottom: 2px solid #FFFFFF;
+
+      li {
+        width: 50%;
+        @include flex(row, center, center, center);
+        //   font-family: $font-03;
+        @include font(1.8rem, 700, 1em);
+      }
+    }
+
+    .tab_label {
+      width: 100%;
+      padding: 2rem;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 900;
+      background-color: $black-01;
+      color: $secondary-01;
+      // border: 2px solid $secondary-01;
+      // border-radius: .5rem;
+      margin: 0;
+      transition: all .3s ease-out;
+
+      &:hover {
+        background-color: $primary-01;
+        transition: all .3s ease-out;
+      }
+    }
+
+    .rd_tabs {
+      display: none;
+      position: absolute;
+    }
+
+    .rd_tabs:checked~label {
+      background-color: #FFFFFF;
+      color: $secondary-01;
+      cursor: default;
+      border: none;
+    }
+
+    .rd_tabs:checked~.tab-content {
+      @include flex(column, flex-start, center, center);
+    }
+
+    .tab-content {
+      height: auto;
+      width: 100%;
+      background-color: #fff;
+      display: none;
+      @include absolute(6rem, auto, auto, 0);
+      padding: 1.5rem 3rem;
+      margin-bottom: 3rem;
+
+      @include sm {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        margin: 1rem 0;
+      }
+
+      h3 {
+        width: 80%;
+      }
+
+      .logo-clube {
+        height: 8rem;
+        margin-top: 1.5rem;
+      }
+
+      form {
+        width: 50%;
+        margin: 0 auto;
+
+        @include md {
+          width: 100%;
+        }
+      }
+
+      .select-club {
+        @include flex(row, center, center, center);
+        text-transform: initial;
+        padding-left: 0;
+        margin-top: 1.2rem;
+
+        img {
+          opacity: 1;
+        }
+
+        p {
+          margin: 0 .5rem;
+          color: $black-01;
+        }
+
+        i {
+          display: inline-block;
+          margin-left: 3rem;
+
+          img {
+            width: 2.4rem;
+          }
+        }
+      }
+    }
+
+    #select-club:checked~.listTeams_popUp {
+      display: block;
+    }
+
+    #select-club:checked~.select-club i {
+      transform: rotate(180deg);
+      animation: rotateImg .3s ease-out;
+    }
+
+    .listTeams_popUp {
+      width: 100%;
+      max-height: 28rem;
+      overflow-y: scroll;
+      display: none;
+      @include absolute(5.8rem, 50%, auto, auto);
+      transform: translateX(50%);
+      background-color: #FFFFFF;
+      border: 1px solid $secondary-01;
+      border-radius: .5rem;
+      transition: all .3s ease-out;
+      z-index: 99;
+
+      &::-webkit-scrollbar {
+        width: .8rem;
+        background: $gray-01;
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 1rem;
+        border-radius: 1rem;
+        background: $white-01;
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+      }
+
+      li {
+        width: auto;
+        @include flex(row, center, center, center);
+        padding: 1.6rem .8rem;
+        cursor: pointer;
+
+        img {
+          height: 3.5rem;
+          margin: 0 .5rem;
+        }
+
+        p {
+          @include font(1.6rem, 700, 1.2em);
+          margin: 0 .5rem;
+        }
+
+        &:hover {
+          background-color: $white-01;
+          transition: all .3s ease-out;
+        }
+      }
+    }
+
+    .team-select-name {
+      @include font(1.6rem, 900, 1.2em);
+      text-transform: uppercase;
+      color: #404040;
+      animation: nameTeam .3s ease-in;
+    }
+  }
+
+  .infos-socio {
+    @include flex(column, flex-start, flex-start, flex-start);
+    margin: 1.5rem 0;
+    border: none;
+
+    li {
+      @include flex(column, center, center, center);
+      width: auto;
+      @include font(1.6rem, 300, 1.2rem);
+      color: $primary-01;
+
+      span {
+        margin: .5rem 0;
+      }
+    }
+
+    img {
+      width: 4rem;
+    }
+  }
+
+  // ESTILO DO MODAL EXTERNALOPS
+  .modal-msg {
+    padding: 3rem;
+
+    i {
+      display: inline-block;
+      height: 4.5rem;
+      margin-bottom: 1.5rem;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  div [smv-type="wufmbrarea"] {
+    @include font(1.6rem, 700, 1.4em);
+    text-align: center;
+    @include flex(column, flex-start, center, center);
+  }
+
+  .txt_small {
+    @include font(1.2rem, 300, 1.4em);
+    margin-top: .5rem;
+  }
+
+  .esqueci-senha {
+    @include font(1.4rem, 700, 1.2em);
+    color: $primary-01;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: $primary-01;
+      @include absolute(auto, auto, -2px, 0);
+      transform: scale(0, 1);
+      transform-origin: 0 0;
+      transition: all .3s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primary-01;
+      text-decoration: none;
+
+      &:before {
+        transform: scale(1, 1);
+        transition: all .3s ease-in;
+      }
+    }
+  }
+
+  .link-registo {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 50%;
+      height: 2px;
+      background-color: rgba(21, 21, 21, .2);
+      // opacity: .1;
+      @include absolute(0, 25%, auto, auto);
+      box-shadow: 2px 2px 26px -6px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .registo_captcha {
+    margin-bottom: 1.5rem;
+  }
+
+  .userfrommember {
+    width: 100%;
+    @include flex(column, flex-start, center, flex-start);
+  }
+
+  .registo-finalizado {
+    padding: 3rem 1.5rem;
+    @include flex(column, flex-start, center, center);
+
+    form {
+      width: 70%;
+    }
+
+    i {
+      width: 5rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      ;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .recuperar-senha {
+    width: 100%;
+    @include flex(column, flex-start, center, center);
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    button,
+    a {
+      margin: 1.5rem;
+    }
+  }
+
+  .noScroll {
+    overflow: hidden;
+    position: fixed;
+  }
+
+  @keyframes modal {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes opacityAnimation {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.4;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotateImg {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes nameTeam {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -5px, 0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

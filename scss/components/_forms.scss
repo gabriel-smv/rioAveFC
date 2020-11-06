@@ -1,0 +1,127 @@
+div [smv-type="widgetpage"] {
+  form {
+    width: 100%;
+    margin-top: 1.5rem;
+    @include flex(column, flex-start, center, flex-start);
+
+    fieldset {
+      border: none;
+    }
+
+    .container-input {
+      width: 100%;
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      @include flex(row, space-between, center, center);
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 4.5rem;
+      padding: .75rem;
+      background: rgba(51, 163, 112, 0.1);
+      border: 1px solid $primary-02;
+      border-radius: 3px;
+      @include font(1.6rem, 300, 1em);
+      color: $gray-01;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $primary-dark;
+        background: rgba(51, 163, 112, 0.25);
+      }
+
+      &:disabled {
+        background-color: $gray-01;
+      }
+    }
+
+    .input-single {
+      width: 19%;
+      padding: .5rem;
+      text-align: center;
+    }
+
+    label {
+      width: 100%;
+      text-align: left;
+      @include font(1.5rem, 500, 1em);
+      color: $gray-01;
+      margin-bottom: .5rem;
+
+      &:disabled {
+        color: $gray-01;
+      }
+    }
+
+    .input-validate {
+      border: 2px solid $secondary-02;
+      color: $secondary-02;
+      position: relative;
+    }
+
+    span.input-validate {
+      @include font(1.2rem, 700, 1em);
+      border: none;
+      position: absolute;
+      bottom: 0;
+    }
+
+    // .btn {
+    //   margin-top: .5rem;
+    // }
+  }
+
+  // cartão de sócio!
+  .container-input {
+    .info-cartao {
+      @include absolute(-.5rem, 0, auto, auto);
+      display: inline-block;
+      cursor: pointer;
+
+      img {
+        width: 1.8rem;
+      }
+
+      .member-card {
+        width: 30rem;
+        height: auto;
+        z-index: 22;
+        @include absolute(3rem, 0, auto, auto);
+        display: none;
+        transition: all .3s ease-in-out;
+        animation-name: animation-card;
+        animation-duration: .4s;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 1rem;
+        }
+      }
+
+      &:hover {
+        .member-card {
+          display: inline-block;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  @keyframes animation-card {
+    0% {
+      opacity: 0;
+      transform: translateX(-30%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

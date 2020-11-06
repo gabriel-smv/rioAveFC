@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitória Sport Club - Pagar Quotas</title>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div smv-type="widgetcontainer" smv-widget="memberfees">
+    <div smv-type="widgetpage" id="smv_wp_memberfees">
+      <div class="load-screen" smv-type="loader" smv-widget="memberfees" style="display:none"></div>
+
+      <div smv-type="wmemberfeesarea" id="smv_memberfeeslist" class="container">
+        <div class="row">
+          <h1 smv-langtext="headmemberfees" smv-langrepltext-numsoc="">Quotas Sócio Nº </h1>
+
+          <p class="quotasTotal">
+            <span><b smv-langtext="quotadelaytotal">Total em atraso</b></span> <span>(
+              <span smv-langrepltext-n="2" smv-langtext="nquotas">2 quotas</span>
+              )</span>: <span><b>24,00€</b></span>
+          </p>
+
+          <table class="col-lg-6 col-md-12">
+            <thead>
+              <tr>
+                <th scope="col" smv-langtext="mfeescolfee">Quota</th>
+                <th scope="col" smv-langtext="mfeescolvalue">Valor</th>
+                <th scope="col" smv-langtext="mfeescolstat">Status</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+
+            <tbody id="wmfee_list_TBody">
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>06 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassDELAYED" smv-langtext="mfeesstatDELAYED" class="status__atrasado">Em Atraso</span>
+                  </b>
+                </td>
+                <td>
+                  <a href="pagar-quotas_escolherPagamento.html" class="btn btn-primary">
+                    <span smv-langtext="btpay">Pagar</span> <span>24,00€</span>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>05 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassDELAYED" smv-langtext="mfeesstatDELAYED" class="status__atrasado">Em
+                      Atraso</span>
+                  </b>
+                </td>
+                <td>
+                  <a href="javascript:smv_mfee_Pay('201705')" class="btn btn-primary">
+                    <span smv-langtext="btpay">Pagar</span> <span>12,00€</span>
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>04 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>03 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>02 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>01 / 2017</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>12 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>11 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>10 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>09 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>08 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>07 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>06 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>05 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>04 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>03 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>02 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>01 / 2016</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+                <td>
+
+
+
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>12 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>11 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>10 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>09 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>08 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td smv-langdatalabel="mfeescolfee" data-label="Quota">
+                  <span>07 / 2015</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolvalue" data-label="Valor">
+                  <span>12,00 €</span>
+                </td>
+
+                <td smv-langdatalabel="mfeescolstat" data-label="Status">
+                  <b>
+                    <span smv-langclass="mfeesclassPAYED" smv-langtext="mfeesstatPAYED"
+                      class="status-aberto">Pago</span>
+                  </b>
+                </td>
+
+                <td>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- smv-type="morembrshiparea" -->
+          <a href="javascript:smv_mfees_getMoreItems()" smv-nextpage="2" id="smv_mfees_more" class="btn-link"
+            smv-langtext="btseemore">ver mais</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-wait" style="display: none;">
+      <div class="container">
+        <div class="row">
+          <i class="icon-animate"><img src="images/svg/wait-icon.svg" alt=""></i>
+          <p>carregando dados</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-error" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <i><img src="images/svg/error-icon.svg" alt="Ícone de erro"></i>
+          <p>desculpe! ocorreu um problema ao carregar os dados</p>
+          <a href="#" class="btn btn-primary"><span>tentar novamente</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery, Bootstrap JS -->
+  <script src="includes/jquery.min.js"></script>
+  <script src="includes/bootstrap.min.js"></script>
+
+  <script src="js/menu.js "></script>
+</body>
+
+</html>
