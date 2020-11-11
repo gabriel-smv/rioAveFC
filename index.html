@@ -445,8 +445,42 @@
 
         <div smv-type="wufmbrarea" id="smv_ufmaccountemailsent" style="display:none">
           <div smv-langtext="ufm_confirmemaillink">
-            Foi enviado um e-mail para concluir o processo. 
-            <div class="txt_small">Se não receberes o e-mail dentro de alguns minutos, verifica a tua caixa de spam/lixo electrónico da conta de e-mail indicada.</div>
+            Foi enviado um e-mail para concluir o processo.
+            <div class="txt_small">Se não receberes o e-mail dentro de alguns minutos, verifica a tua caixa de spam/lixo
+              electrónico da conta de e-mail indicada.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="smv-modal-msg" class="modal-login-container" smv-ismodal="1">
+        <div class="modal-content">
+          <div class="modal-msg">
+            <i style="display:block" id="smv-modalmsg-okimg"><img
+                src="https://lisboa.smartmove.pt:8083/RAFC/ResourcesWebStoreV2/images/svg/check-icon.svg" alt=""></i>
+            <h2 id="smv-modalmsg-title"></h2>
+            <p></p>
+            <h2 id="smv-modalmsg-t1"></h2>
+            <p></p>
+            <h2 id="smv-modalmsg-t2"></h2>
+
+            <div style="display:inline-block">
+              <button id="smv-modalmsg-bt-cancel" type="button" class="btn btn-primary"
+                onclick="javascript:smv_Msg_Modal_BtClick('cancel')">
+                <span smv-langtext="btcancel">Cancelar</span>
+              </button>
+              <button id="smv-modalmsg-bt-back" type="button" class="btn btn-primary"
+                onclick="javascript:smv_Msg_Modal_BtClick('back')">
+                <span smv-langtext="btback">Voltar</span>
+              </button>
+              <button id="smv-modalmsg-bt-retry" type="button" class="btn btn-primary"
+                onclick="javascript:smv_Msg_Modal_BtClick('retry')">
+                <span smv-langtext="btrefresh">Atualizar</span>
+              </button>
+              <button id="smv-modalmsg-bt-close" type="button" class="btn btn-primary"
+                onclick="javascript:smv_Msg_Modal_BtClick('close')">
+                <span smv-langtext="btclose">Fechar</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

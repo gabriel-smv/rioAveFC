@@ -11,7 +11,7 @@ div[smv-widget="userfrommember"] {
   }
 }
 
-div [smv-type="widgetpage"] {
+div[smv-type="widgetpage"] {
   .modal-login-container {
     width: 100%;
     height: 100%;
@@ -30,6 +30,7 @@ div [smv-type="widgetpage"] {
     width: 45%;
     background-color: #FFFFFF;
     position: relative;
+    margin: 0 auto;
 
     @include md {
       width: 70%;
