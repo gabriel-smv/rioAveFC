@@ -3604,7 +3604,6 @@ div[smv-type="widgetpage"] .clube-detalhes p {
 
 div[smv-type="widgetpage"] .bannerUserData {
   width: 100%;
-  height: 17.5rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3678,7 +3677,7 @@ div[smv-type="widgetpage"] .bannerUserData .profile-picture h1 {
 div[smv-type="widgetpage"] .userdata {
   margin-bottom: 3rem;
   position: relative;
-  height: 120vh;
+  height: auto;
 }
 
 @media (max-width: 992px) {
