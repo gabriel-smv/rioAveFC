@@ -3143,6 +3143,184 @@ div[smv-type="widgetpage"] .noScroll {
   }
 }
 
+.load-screen {
+  width: 100%;
+  height: 100%;
+  background: url(../images/loading.gif) no-repeat center center #000000;
+  background-size: 100px auto;
+  position: fixed;
+  top: 0px;
+  opacity: 0.8;
+  z-index: 2000;
+  text-align: center;
+}
+
+.section-login {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 3rem 0;
+}
+
+.section-login .container-login {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-login .nav-tabs {
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+.section-login .nav-tabs .nav-link {
+  color: #707070;
+  border-radius: .25rem;
+}
+
+.section-login .nav-tabs .nav-link:hover {
+  color: #3eaf7c;
+  border-color: #eceeef;
+  transition: all .2s linear;
+}
+
+.section-login .nav-tabs .nav-link.active {
+  background: #6BE07B;
+  color: #33a370;
+  border: none;
+}
+
+.section-login .tab-content {
+  width: 100%;
+  position: relative;
+}
+
+.section-login .tab-content .active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.section-login .tab-content .tab-pane-registo {
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.section-login .registo-member form,
+.section-login .registo-noMember form {
+  margin: 1.5rem auto;
+}
+
+.section-login .registo-member p,
+.section-login .registo-noMember p {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.section-login .registo-member {
+  position: relative;
+}
+
+.section-login .registo-member:before {
+  content: '';
+  width: 1px;
+  height: 80%;
+  background-color: rgba(44, 62, 80, 0.9);
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+
+@media (max-width: 767px) {
+  .section-login .registo-member:before {
+    display: none;
+  }
+}
+
+.section-login form .container-input {
+  justify-content: space-between;
+}
+
+.section-login form .show-password {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  bottom: auto;
+  left: auto;
+  transform: translateY(-30%);
+}
+
+.section-login .aviso-noMember {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  margin-bottom: 1.4rem;
+}
+
+.section-login .aviso-noMember .link-registo {
+  padding: 0;
+}
+
+.section-login .aviso-noMember .link-registo:after {
+  display: none;
+}
+
+.section-login .container-sucesso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 1.5rem 0;
+}
+
+.section-login .container-sucesso i {
+  margin-bottom: 1.5rem;
+}
+
+.section-login .container-sucesso img {
+  width: 5rem;
+}
+
+.section-login .container-sucesso h1 {
+  border: none;
+  text-align: center;
+}
+
+.section-login .container-sucesso .container-btn {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.section-login .container-sucesso .container-btn a {
+  margin: 0 1rem;
+}
+
 div[smv-widget="memberfees"] {
   width: 100%;
   position: relative;
