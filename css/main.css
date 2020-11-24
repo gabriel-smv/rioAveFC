@@ -2389,6 +2389,7 @@ div[smv-type="widgetpage"] table td {
   line-height: 1.2em;
   text-transform: uppercase;
   color: #000000;
+  border: 0px;
 }
 
 div[smv-type="widgetpage"] table th b,
@@ -3523,6 +3524,8 @@ div[smv-type="widgetpage"] .pagamento_sucesso .container-btn a {
 }
 
 div[smv-type="widgetpage"] .payreturn__multibanco {
+  width: 100%;
+  max-width: 580px;
   border: 2px solid #f1c500;
   border-radius: .5rem;
   text-align: center;
@@ -3537,6 +3540,7 @@ div[smv-type="widgetpage"] .payreturn__multibanco img {
 
 div[smv-type="widgetpage"] .payreturn__multibanco table {
   margin-bottom: 0;
+  border: 0px;
 }
 
 div[smv-type="widgetpage"] .payreturn__multibanco table tr {

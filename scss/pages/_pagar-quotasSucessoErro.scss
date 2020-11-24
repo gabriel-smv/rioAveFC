@@ -22,6 +22,8 @@ div[smv-type="widgetpage"] {
   }
 
   .payreturn__multibanco {
+    width: 100%;
+    max-width: 580px;
     border: 2px solid $secondary-02;
     border-radius: .5rem;
     text-align: center;
@@ -35,6 +37,7 @@ div[smv-type="widgetpage"] {
 
     table {
       margin-bottom: 0;
+      border: 0px;
 
       tr {
         @include flex(row, space-between, center, center);
