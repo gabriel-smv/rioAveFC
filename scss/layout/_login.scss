@@ -282,6 +282,7 @@ div[smv-type="widgetpage"] {
   // ESTILO DO MODAL EXTERNALOPS
   .modal-msg {
     padding: 3rem;
+    text-align: center;
 
     i {
       display: inline-block;
@@ -291,6 +292,10 @@ div[smv-type="widgetpage"] {
       img {
         height: 100%;
       }
+    }
+
+    h2 {
+      margin-top: .5rem;
     }
   }
 

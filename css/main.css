@@ -2952,6 +2952,7 @@ div[smv-type="widgetpage"] .infos-socio img {
 
 div[smv-type="widgetpage"] .modal-msg {
   padding: 3rem;
+  text-align: center;
 }
 
 div[smv-type="widgetpage"] .modal-msg i {
@@ -2962,6 +2963,10 @@ div[smv-type="widgetpage"] .modal-msg i {
 
 div[smv-type="widgetpage"] .modal-msg i img {
   height: 100%;
+}
+
+div[smv-type="widgetpage"] .modal-msg h2 {
+  margin-top: .5rem;
 }
 
 div[smv-type="widgetpage"] div [smv-type="wufmbrarea"] {
