@@ -1927,6 +1927,10 @@ div[smv-type="widgetpage"] form .container-input {
   text-align: left;
 }
 
+div[smv-type="widgetpage"] form .container-input small {
+  font-weight: 400;
+}
+
 div[smv-type="widgetpage"] form input,
 div[smv-type="widgetpage"] form select {
   width: 100%;

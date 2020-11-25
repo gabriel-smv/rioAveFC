@@ -16,6 +16,10 @@ div[smv-type="widgetpage"] {
       @include flex(row, space-between, center, center);
       flex-wrap: wrap;
       text-align: left;
+
+      small {
+        font-weight: 400;
+      }
     }
 
     input,
