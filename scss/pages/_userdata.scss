@@ -185,6 +185,20 @@ div[smv-type="widgetpage"] {
           }
         }
 
+        .btn-wrapper {
+          text-align: center;
+
+          p {
+            font-size: 1.4rem;
+            margin: 1.2rem 0 0;
+            color: $gray-01;
+
+            strong {
+              font-weight: 700;
+            }
+          }
+        }
+
         @include sm {
           margin: 1.5rem 0;
         }

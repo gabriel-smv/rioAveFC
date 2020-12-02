@@ -4046,6 +4046,20 @@ div[smv-type="widgetpage"] .userdata .tab-content .clube__socio--infos ul .icon-
   }
 }
 
+div[smv-type="widgetpage"] .userdata .tab-content .clube__socio .btn-wrapper {
+  text-align: center;
+}
+
+div[smv-type="widgetpage"] .userdata .tab-content .clube__socio .btn-wrapper p {
+  font-size: 1.4rem;
+  margin: 1.2rem 0 0;
+  color: rgba(44, 62, 80, 0.9);
+}
+
+div[smv-type="widgetpage"] .userdata .tab-content .clube__socio .btn-wrapper p strong {
+  font-weight: 700;
+}
+
 @media (max-width: 767px) {
   div[smv-type="widgetpage"] .userdata .tab-content .clube__socio {
     margin: 1.5rem 0;
