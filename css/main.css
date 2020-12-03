@@ -1954,7 +1954,7 @@ div[smv-type="widgetpage"] form select:focus {
 
 div[smv-type="widgetpage"] form input:disabled,
 div[smv-type="widgetpage"] form select:disabled {
-  background-color: rgba(44, 62, 80, 0.9);
+  background-color: #dedede;
 }
 
 div[smv-type="widgetpage"] form .input-single {
@@ -1978,8 +1978,8 @@ div[smv-type="widgetpage"] form label:disabled {
 }
 
 div[smv-type="widgetpage"] form .input-validate {
-  border: 2px solid #f1c500;
-  color: #f1c500;
+  border: 2px solid #e42626;
+  color: #e42626;
   position: relative;
 }
 

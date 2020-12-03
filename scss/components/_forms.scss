@@ -40,7 +40,7 @@ div[smv-type="widgetpage"] {
       }
 
       &:disabled {
-        background-color: $gray-01;
+        background-color: rgba(222, 222, 222, 1);
       }
     }
 
@@ -63,8 +63,8 @@ div[smv-type="widgetpage"] {
     }
 
     .input-validate {
-      border: 2px solid $secondary-02;
-      color: $secondary-02;
+      border: 2px solid #e42626;
+      color: #e42626;
       position: relative;
     }
 
